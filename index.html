@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Heart Gift Surprise</title>
+  <style>
+    :root{
+      --pink:#ffd1e8;         /* background */
+      --hotpink:#ff4fa3;      /* accents */
+      --deeppink:#ff1e8a;     /* glow core */
+      --darkpink:#b3005b;     /* shadow */
+      --white:#ffffff;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+      background: var(--pink);
+      overflow:hidden;
+    }
+
+    /* Floating big hearts background */
+    .bg-hearts{
+      position:fixed; inset:0; pointer-events:none; overflow:hidden;
+    }
+    .bg-hearts .heart{
+      position:absolute; width:18vmin; height:18vmin; opacity:.12; filter:blur(.5px);
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.45), rgba(255,255,255,.05) 60%),
+                  linear-gradient(135deg, var(--hotpink), var(--deeppink));
+      clip-path: path('M 50 90 C 20 70, 0 50, 10 30 C 20 10, 40 10, 50 25 C 60 10, 80 10, 90 30 C 100 50, 80 70, 50 90 Z');
+      transform: translateY(110vh) scale(1);
+      animation: floatUp 16s linear infinite;
+    }
+    @keyframes floatUp{
+      0%{ transform: translateY(110vh) scale(1) rotate(0deg); }
+      100%{ transform: translateY(-130vh) scale(1) rotate(10deg); }
+    }
+    /* position a few large hearts with different delays */
+    .bg-hearts .h1{ left:8vw; animation-delay:0s; }
+    .bg-hearts .h2{ left:28vw; animation-delay:3s; width:22vmin; height:22vmin; }
+    .bg-hearts .h3{ left:58vw; animation-delay:6s; width:26vmin; height:26vmin; }
+    .bg-hearts .h4{ left:78vw; animation-delay:1s; width:20vmin; height:20vmin; }
+    .bg-hearts .h5{ left:42vw; animation-delay:9s; width:24vmin; height:24vmin; }
+
+    .scene{
+      position:relative; height:100%; display:grid; place
